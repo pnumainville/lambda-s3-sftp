@@ -45,7 +45,7 @@ assert SSH_PASSWORD or SSH_PRIVATE_KEY, "Missing SSH_PASSWORD or SSH_PRIVATE_KEY
 SSH_PORT = int(os.getenv('SSH_PORT', 22))
 SSH_DIR = os.getenv('SSH_DIR')
 # filename mask used for the remote file
-SSH_FILENAME = os.getenv('SSH_FILENAME', 'data_{current_date}')
+SSH_FILENAME = os.getenv('SSH_FILENAME', '{key}')
 
 
 def on_trigger_event(event, context):
