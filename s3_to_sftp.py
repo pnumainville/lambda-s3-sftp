@@ -97,6 +97,7 @@ def on_trigger_event(event, context):
     with transport:
         for s3_file in s3_files(event):
             filename = sftp_filename(SSH_FILENAME, s3_file)
+            filename = filename.replace('+%28', '_').replace('%29.xml', '.xml')
             bucket = s3_file.bucket_name
             contents = ''
             try:
